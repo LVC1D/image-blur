@@ -1,0 +1,16 @@
+[package]
+name = "image-blur"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+criterion = {workspace = true}
+
+[[bench]]
+name = "blur_benchmark"
+harness = false
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
