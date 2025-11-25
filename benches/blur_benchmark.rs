@@ -1,9 +1,16 @@
-use criterion::{criterion_group, criterion_main, Criterion};
-use image_blur::{blur_naive, blur_cache_optimized, blur_separable, Pixel, ImageSoA};
+use criterion::{Criterion, criterion_group, criterion_main};
+use image_blur::{ImageSoA, Pixel, blur_cache_optimized, blur_naive, blur_separable};
 use std::hint::black_box;
 
 fn create_test_image_aos() -> Vec<Pixel> {
-    vec![Pixel { r: 100, g: 150, b: 200 }; 512 * 512]
+    vec![
+        Pixel { 
+            r: 100, 
+            g: 150, 
+            b: 200
+        }; 
+        512 * 512
+    ]
 }
 
 fn create_test_image_soa() -> ImageSoA {
@@ -12,7 +19,7 @@ fn create_test_image_soa() -> ImageSoA {
         height: 512,
         r: vec![100; 512 * 512],
         g: vec![150; 512 * 512],
-        b: vec![200; 512 * 512],
+        b: vec![200; 512 * 512]
     }
 }
 
