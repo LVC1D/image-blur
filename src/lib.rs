@@ -276,6 +276,7 @@ mod tests {
     }
 }
 
+#[allow(dead_code)]
 fn blur_horizontal_replicate(chan: &[u8], width: usize) -> Vec<u8> {
     let mut res = vec![];
 

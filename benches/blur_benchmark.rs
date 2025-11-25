@@ -19,7 +19,7 @@ fn create_test_image_soa() -> ImageSoA {
         height: 512,
         r: vec![100; 512 * 512],
         g: vec![150; 512 * 512],
-        b: vec![200; 512 * 512]
+        b: vec![200; 512 * 512],
     }
 }
 
@@ -44,7 +44,8 @@ fn benchmark_blur_separable(c: &mut Criterion) {
     });
 }
 
-criterion_group!(benches, 
+criterion_group!(
+    benches, 
     benchmark_blur_naive, 
     benchmark_blur_cache_optimized,
     benchmark_blur_separable
