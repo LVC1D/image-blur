@@ -4,11 +4,11 @@ use std::hint::black_box;
 
 fn create_test_image_aos() -> Vec<Pixel> {
     vec![
-        Pixel { 
-            r: 100, 
-            g: 150, 
+        Pixel {
+            r: 100,
+            g: 150,
             b: 200,
-        }; 
+        };
         512 * 512
     ]
 }
@@ -45,8 +45,8 @@ fn benchmark_blur_separable(c: &mut Criterion) {
 }
 
 criterion_group!(
-    benches, 
-    benchmark_blur_naive, 
+    benches,
+    benchmark_blur_naive,
     benchmark_blur_cache_optimized,
     benchmark_blur_separable,
 );
