@@ -7,7 +7,7 @@ fn create_test_image_aos() -> Vec<Pixel> {
         Pixel { 
             r: 100, 
             g: 150, 
-            b: 200
+            b: 200,
         }; 
         512 * 512
     ]
@@ -48,6 +48,6 @@ criterion_group!(
     benches, 
     benchmark_blur_naive, 
     benchmark_blur_cache_optimized,
-    benchmark_blur_separable
+    benchmark_blur_separable,
 );
 criterion_main!(benches);
